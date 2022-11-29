@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function sumFunction() {
+            n = window.prompt("Enter value for 'n': ");
+            if (n === NaN || n < 1 || !Number.isInteger(Number(n))) {
+                alert("Enter a positive number")
+                sumFunction();
+            } else {
+                i = 0;
+                sum = 0;
+                while (i < n) {
+                    num = window.prompt("Enter a number: " + (i + 1) + "/" + n);
+                    num = Number(num);
+                    if (num === NaN || !Number.isInteger(num)) {
+                        alert("Please enter a number")
+                    } else {
+                        sum += num;
+                        i++;
+                    }
+                }
+                alert("Sum: " + sum);
+            }
+        }
+
+        function maxFunction() {
+            n = window.prompt("Enter value for 'n': ");
+            if (n === NaN || n < 1 || !Number.isInteger(Number(n))) {
+                alert("Enter a positive number")
+                maxFunction();
+            } else {
+                i = 0;
+                max = 0;
+                while (i < n) {
+                    num = window.prompt("Enter a number: " + (i + 1) + "/" + n);
+                    num = Number(num);
+                    if (num === NaN || !Number.isInteger(num)) {
+                        alert("Please enter a number")
+                    } else {
+                        if (num > max) {
+                            max = num;
+                        }
+                    }
+                    i++;
+                }
+                alert("Max number: " + max);
+            }
+        }
+
+        function sumMaxFunction() {
+            n = window.prompt("Enter value for 'n': ");
+            if (n === NaN || n < 1 || !Number.isInteger(Number(n))) {
+                alert("Enter a positive number")
+                sumMaxFunction();
+            } else {
+                i = 0;
+                max = 0;
+                sum = 0;
+                while (i < n) {
+                    num = window.prompt("Enter a number: " + (i + 1) + "/" + n);
+                    num = Number(num);
+                    if (num === NaN || !Number.isInteger(num)) {
+                        alert("Please enter a number")
+                    } else {
+                        sum += num;
+                        if (num > max) {
+                            max = num;
+                        }
+                    }
+                    i++;
+                }
+                alert("Max number: " + max + "\nSum: " + sum);
+            }
+        }
+
+        function forLoop() {
+            n = window.prompt("Enter value for 'n': ");
+            if (n === NaN || n < 1 || !Number.isInteger(Number(n))) {
+                alert("Enter a positive number")
+                forLoop();
+            } else {
+                max = 0;
+                sum = 0;
+                for (i = 0; i < n; i++) {
+                    valid = false;
+                    while (!valid) {
+                        num = window.prompt("Enter a number: " + (i + 1) + "/" + n);
+                        num = Number(num);
+                        if (num === NaN || !Number.isInteger(num)) {
+                            alert("Please enter a number")
+                        } else {
+                            valid = true;
+                            sum += num;
+                            if (num > max) {
+                                max = num;
+                            }
+                        }
+                    }
+                }
+                alert("Max number: " + max + "\nSum: " + sum);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick="sumFunction()" value="1.Sum (While loop)" /><br><br>
+    <input type="button" onclick="maxFunction()" value="2.Max (While loop)" /><br><br>
+    <input type="button" onclick="sumMaxFunction()" value="3.Sum & Max (While loop)" /><br><br>
+    <input type="button" onclick="forLoop()" value="4.Sum & Max (For loop)" /><br><br>
+</body>
+
+</html>

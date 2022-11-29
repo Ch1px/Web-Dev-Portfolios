@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<body>
+    <form>
+        <div class="textFields">
+            <label for="text1">text1:</label>
+            <input type="text" class="text" name="text1"><br><br>
+
+            <label for="text2">text2:</label>
+            <input type="text" class="text" name="text2"><br><br>
+
+            <label for="text3">text3:</label>
+            <input type="text" class="text" name="text3"><br><br>
+
+            <label for="text4">text4:</label>
+            <input type="text" class="text" name="text4"><br><br>
+
+            <label for="text5">text5:</label>
+            <input type="text" class="text" name="text5"><br><br>
+
+            <label for="text6">text6:</label>
+            <input type="text" class="text" name="text6"><br><br>
+        </div>
+        <br>
+        <label for="textResult">Text Result: </label>
+        <input type="text" id="textResult" name="textResult">
+
+        <input type="button" id="concatButton" value="Concatenate"><br><br>
+        <input type="reset" id="clearButton" value="Clear text fields"><br><br>
+        <input type="button" id="addButton" value="Add 7th text field">
+    </form>
+
+    <script>
+
+        var addTextfield = document.getElementById("addButton");
+        var concatenate = document.getElementById("concatButton");
+
+        let textResult = document.getElementById("textResult");
+        let container = document.querySelector(".textFields");
+
+        concatenate.onclick = function () {
+            let x = document.querySelectorAll(".textFields .text");
+
+            textResult.value = "";
+            for (i = 0; i < x.length; i++) {
+                textResult.value += x[i].value + " ";
+            }
+        }
+
+        addTextfield.onclick = function () {
+            let x = document.querySelectorAll(".textFields .text");
+            var textField = document.createElement("input")
+            let id = "text" + (x.length + 1);
+
+            textField.setAttribute("id", id)
+            textField.setAttribute("name", id)
+            textField.classList.add("text")
+
+            var label = document.createElement("label");
+            label.setAttribute("for", textField);
+            label.innerHTML = id + ": ";
+
+            container.append((label), (textField));
+
+            this.parentNode.removeChild(addTextfield);
+
+            let removeTextbtn = document.createElement("button");
+            removeTextbtn.innerHTML = "Remove 7th Text Field";
+            document.body.appendChild(removeTextbtn);
+
+            removeTextbtn.onclick = function () {
+                textField.parentNode.removeChild(textField);
+                label.parentNode.removeChild(label);
+                this.parentNode.removeChild(removeTextbtn);
+                document.body.appendChild(addTextfield);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
