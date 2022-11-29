@@ -5,7 +5,7 @@
             <body>
                 <h2>Student list</h2>
                 <table border = "1">
-                    <tr bgcolor = "lightgreen">
+                    <tr bgcolor = "lightblue">
                         <th>NAME</th>
                         <th>AGE</th>
                     </tr>

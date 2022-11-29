@@ -5,22 +5,22 @@
 <body>
     <form>
         <div class="textFields">
-            <label for="text1">text1:</label>
+            <label for="text1">Text 1:</label>
             <input type="text" class="text" name="text1"><br><br>
 
-            <label for="text2">text2:</label>
+            <label for="text2">Text 2:</label>
             <input type="text" class="text" name="text2"><br><br>
 
-            <label for="text3">text3:</label>
+            <label for="text3">Text 3:</label>
             <input type="text" class="text" name="text3"><br><br>
 
-            <label for="text4">text4:</label>
+            <label for="text4">Text 4:</label>
             <input type="text" class="text" name="text4"><br><br>
 
-            <label for="text5">text5:</label>
+            <label for="text5">Text 5:</label>
             <input type="text" class="text" name="text5"><br><br>
 
-            <label for="text6">text6:</label>
+            <label for="text6">Text 6:</label>
             <input type="text" class="text" name="text6"><br><br>
         </div>
         <br>
@@ -52,7 +52,7 @@
         addTextfield.onclick = function () {
             let x = document.querySelectorAll(".textFields .text");
             var textField = document.createElement("input")
-            let id = "text" + (x.length + 1);
+            let id = "Text " + (x.length + 1);
 
             textField.setAttribute("id", id)
             textField.setAttribute("name", id)
